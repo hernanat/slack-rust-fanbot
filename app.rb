@@ -45,9 +45,8 @@ class App < Sinatra::Application
       { challenge: json.fetch("challenge") }.to_json
     elsif json.key?("event")
       handle_event(json.fetch("event"))
+      "{}"
     end
-
-    "{}"
   end
 
   def handle_event(event)
